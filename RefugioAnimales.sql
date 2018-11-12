@@ -28,7 +28,7 @@ CREATE TABLE `animales` (
   `idanimales` int(11) NOT NULL AUTO_INCREMENT,
   `nombre` varchar(45) NOT NULL,
   `edad` varchar(45) NOT NULL,
-  `castrado` varchar(5) NOT NULL,
+  `castrado` tinyint(4) NOT NULL,
   `idcolor` int(11) NOT NULL,
   `idraza` int(11) DEFAULT NULL,
   `idtipo` int(11) NOT NULL,
@@ -46,7 +46,7 @@ CREATE TABLE `animales` (
   CONSTRAINT `FK_animales_sexo` FOREIGN KEY (`idsexo`) REFERENCES `sexo` (`idsexo`),
   CONSTRAINT `FK_animales_tipo` FOREIGN KEY (`idtipo`) REFERENCES `tipoanimal` (`idtipo`),
   CONSTRAINT `FK_animales_usuario` FOREIGN KEY (`idusuario`) REFERENCES `usuario` (`idusuario`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -55,7 +55,7 @@ CREATE TABLE `animales` (
 
 LOCK TABLES `animales` WRITE;
 /*!40000 ALTER TABLE `animales` DISABLE KEYS */;
-INSERT INTO `animales` VALUES (1,'Coby','2 meses','no',3,NULL,1,1,'16/08/2012',1),(2,'Sansa','3 meses','no',1,20,2,2,'11/11/2018',2);
+INSERT INTO `animales` VALUES (3,'Coby','2 meses',0,3,NULL,1,1,'16/08/2012',1),(4,'Sansa','3 meses',0,1,20,2,2,'11/11/2018',2);
 /*!40000 ALTER TABLE `animales` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -223,4 +223,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-11-12 18:50:19
+-- Dump completed on 2018-11-12 18:59:54
